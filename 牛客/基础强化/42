@@ -1,0 +1,8 @@
+知识点union all
+
+(select '总体' university, avg(age) avg_age, avg(gpa) avg_gpa
+from user_profile)
+union all
+(select university, avg(age) avg_age, avg(gpa) avg_gpa
+from user_profile
+group by university)
