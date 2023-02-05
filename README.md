@@ -5,7 +5,8 @@
 
 窗口函数讲的很好的文章：https://zhuanlan.zhihu.com/p/92654574
 
-JOIN的朋友们
+JOIN的朋友们集合啦
 
-![image](https://user-images.githubusercontent.com/90020851/216834265-225ad68e-8eec-427a-a36e-3f24ace30de2.png)
+![image](https://user-images.githubusercontent.com/90020851/216834665-2c2ddd00-f7c7-47cd-8d04-f758e1d96f36.png)
+
 
