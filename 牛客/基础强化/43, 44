@@ -1,0 +1,10 @@
+知识点 group_concat()
+43
+select university, group_concat(distinct age) age_concat
+from user_profile
+group by university
+44
+select university, count(device_id) cnt, group_concat(device_id separator ';') device_list
+from user_profile
+where cnt <= 2
+group by university
