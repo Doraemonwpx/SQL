@@ -1,0 +1,12 @@
+union 和 union all的区别
+union在进行表链接后会筛选掉重复的记录，union all不会去除重复记录。
+
+(select distinct device_id
+from question_practice_detail
+group by device_id
+having count(distinct question_id) > 2)
+union
+(select distinct device_id
+from user_profile
+where university = '北京大学')
+order by device_id desc
