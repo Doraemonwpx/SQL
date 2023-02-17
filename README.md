@@ -1,7 +1,7 @@
 # SQL
 牛客网的SQL练习
 
-非技术快速入门 https://www.nowcoder.com/exam/oj?page=1&tab=SQL%E7%AF%87&topicId=199
+SQL语句执行顺序<img width="914" alt="image" src="https://user-images.githubusercontent.com/90020851/219542125-52d5d46d-92af-49d3-91b5-52b0f5eaa13f.png">
 
 where 和 having 的区别：https://blog.csdn.net/yajie_china/article/details/80089553?spm=1001.2101.3001.6650.7&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-7-80089553-blog-88813269.pc_relevant_default&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-7-80089553-blog-88813269.pc_relevant_default&utm_relevant_index=8
 
