@@ -1,0 +1,24 @@
+select university,
+count(device_id) total_cnt,
+sum(if(gender = 'male', 1, 0)) male_cnt,
+sum(if(gender = 'female', 1, 0)) female_cnt,
+sum(if(age < 23, 1, 0)) lt23_cnt
+from user_profile
+group by university
+having avg(gpa) > 3.6 and total_cnt > 2
+
+"""错误回答，无法处理平均值，每一个都带有窗口函数把问题复杂化了
+select university, total_cnt, male_cnt, female_cnt, lt23_cnt
+from (
+    select university,
+    count(device_id) over(partition by university) total_cnt,
+    sum(if(gender = 'male', 1, 0)) over(partition by university) male_cnt,
+    sum(if(gender = 'female', 1, 0)) over(partition by university) female_cnt,
+    sum(if(age < 23, 1, 0)) over(partition by university) lt23_cnt,
+    avg(gpa) over(partition by university) avg_gpa
+    from user_profile
+) u2
+where avg_gpa > 3.6 and lt23_cnt > 2
+group by university
+"""
+
