@@ -1,0 +1,8 @@
+select u.device_id,convert(sum(if(difficult_level='hard',1,0)),SIGNED)  as question_cnt
+From  user_profile u
+left  join question_detail  qd
+left join question_practice_detail qpd
+on qpd.question_id =qd.question_id
+on u.device_id = qpd.device_id
+group by u.device_id
+order by question_cnt
