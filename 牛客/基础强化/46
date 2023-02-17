@@ -1,0 +1,23 @@
+select device_id, university
+# 遇到了单纯用聚合函数和group by无法select出device_id
+# 没有用窗口函数的意识
+# 当既想要聚合函数列，又想要非（分组列、聚合函数或常量）列，那么就要想到用窗口函数
+from (
+# 记得给窗口函数列起新名字，否则新列名就是"avg(gpa) over (partition by university)"
+    select device_id, university, gpa, avg(gpa) over (partition by university) avg_gpa
+    from user_profile
+) u2
+where gpa > avg_gpa and avg_gpa > 3.6
+order by device_id desc
+
+
+"""原错误回答，死磕group by，没有用窗口函数当意识
+select device_id, university
+from (
+    select device_id, university, avg(gpa)
+    from user_profile
+    group by university
+) u2
+where gpa > avg(gpa) and avg(gpa) > 3.6
+order by device_id desc
+"""
