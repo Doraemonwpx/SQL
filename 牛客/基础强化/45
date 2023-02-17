@@ -1,0 +1,7 @@
+select age, max(cnt) max_cnt
+from(
+select age, university, count(id) cnt
+from user_profile
+group by age, university) u2
+group by age
+order by max_cnt desc
