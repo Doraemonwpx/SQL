@@ -1,0 +1,8 @@
+select distinct (case when graduate_year = 2022 then '大四'
+when graduate_year = 2023 then '大三'
+when graduate_year = 2024 then '大二'
+when graduate_year = 2025 then '大一'
+end) grade, round((avg(gpa) over(partition by graduate_year)), 2) avg_gpa
+from user_profile
+where graduate_year between 2022 and 2025
+order by avg_gpa desc
