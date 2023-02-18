@@ -1,0 +1,7 @@
+select distinct device_id, (case when answer_cnt is not null then concat('答题数:',answer_cnt)
+when answer_cnt is null and gpa is not null then concat('gpa:',gpa)
+when gpa is null and age is not null then concat('年龄:',age)
+when age is null then '暂无关键信息'
+end) key_info
+from user_profile
+order by device_id
