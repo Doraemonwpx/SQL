@@ -1,0 +1,7 @@
+select (case when day(event_date) between 1 and 9 then concat('2021年0',month(event_date),'月上旬')
+when day(event_date) between 10 and 19 then concat('2021年0',month(event_date),'月中旬')
+when day(event_date) between 20 and 31 then concat('2021年0',month(event_date),'月下旬')
+end) dt_range, count(distinct device_id) cnt
+from question_practice_detail
+group by dt_range
+order by substr(dt_range,7,1) desc, cnt desc
