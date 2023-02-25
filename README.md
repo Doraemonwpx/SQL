@@ -9,6 +9,10 @@ where 和 having 的区别：https://blog.csdn.net/yajie_china/article/details/8
 
 利用位置提取字符串中字符或字符串：https://blog.csdn.net/u012973218/article/details/71374314
 
+获取字符串长度&length() vs. char_length()：https://cloud.tencent.com/developer/article/1655577
+![image](https://user-images.githubusercontent.com/90020851/221378961-b0622e25-e5f4-4673-84e2-e7e0e1b7ddf1.png)
+
+
 窗口函数讲的很好的文章：https://zhuanlan.zhihu.com/p/92654574
 
 JOIN的朋友们集合啦：https://zhuanlan.zhihu.com/p/29234064#:~:text=LEFT%20JOIN,%E4%B9%9F%E4%BC%9A%E8%A2%AB%E4%B8%80%E8%B5%B7%E8%BF%94%E5%9B%9E%E3%80%82
