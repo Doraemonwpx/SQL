@@ -1,0 +1,7 @@
+##空格也算一个字符，因此要先删除多余空格，再修改字符串内部
+
+select device_id, (case when substr(blog_url, 6, 2)='//' then blog_url
+when substr(blog_url, 6, 2)!='//' then concat(substr(blog_url, 1, 6), '/', substr(blog_url, 7, char_length(blog_url)))
+end) blog_url
+from (select device_id, replace(blog_url, ' ', '') blog_url
+from user_submit) t2
