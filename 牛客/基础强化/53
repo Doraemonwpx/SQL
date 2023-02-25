@@ -1,0 +1,14 @@
+select device_id, concat('2021年0', month(event_date),'月') ym, count(question_id) cnt
+from question_practice_detail
+where day(event_date) between (day(last_day(event_date))-6) and day(last_day(event_date))
+group by device_id, ym
+order by device_id, substr(ym, 7, 1)
+
+##第一次做错涉及的知识点：月最后一天如何计算，要考虑每个月不一样的
+##用到last_day(date),输出当月最后一天
+
+select device_id, concat('2021年0', month(event_date),'月') ym, count(question_id) cnt
+from question_practice_detail
+where day(event_date) between 25 and 31
+group by device_id, ym
+order by device_id, substr(ym, 7, 1)
