@@ -1,0 +1,4 @@
+select device_id, nick_name, char_length(nick_name) nick_len
+from user_submit
+where char_length(nick_name)>4
+order by device_id desc
